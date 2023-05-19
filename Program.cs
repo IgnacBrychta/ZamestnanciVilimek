@@ -11,7 +11,7 @@
         static void Main(string[] args)
         {
             Brigadnik.HrubaMzdaNaHodinu = 150;
-            Zamestnanec.HrubaMzdaNaHodinu = 200;
+            Zamestnanec.HrubaMzdaNaHodinu = 190;
             VypsatBrigadniky();
             Console.ReadKey();
             VypsatZamestnance();
