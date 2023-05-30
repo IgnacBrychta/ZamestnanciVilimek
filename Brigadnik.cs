@@ -6,6 +6,7 @@ sealed class Brigadnik : Pracovnik
 	public Brigadnik(string jmeno, string prijmeni, string rodneCislo, string bydliste)
 		: base(jmeno, prijmeni, rodneCislo, bydliste)
 	{ }
+
 	public override int SpocitatCistouMzdu()
 	{
 		int hrubaMzda = (PocetOdpracovanychHodin ?? 0) * HrubaMzdaNaHodinu;

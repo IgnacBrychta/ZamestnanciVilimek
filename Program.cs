@@ -1,12 +1,9 @@
-﻿using System.Net;
-using System.Runtime.InteropServices;
-
-namespace ZamestnanciVilimek;
+﻿namespace ZamestnanciVilimek;
 
 internal static partial class Program
 {
     /*
-     * výchozí naplnění; obsah seznamu může být smazán a mohou
+     * Výchozí naplnění; obsah seznamu může být smazán a mohou
      * být implementovány metody PridatZamestnance() a PridatBrigadnika()
      */
     static List<Pracovnik> pracovnici = new List<Pracovnik>()
@@ -93,13 +90,13 @@ internal static partial class Program
         return hrubaMzda;
     }
 
-	[DllImport("user32.dll", CharSet = CharSet.Auto)]
+	[System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
 	private static extern uint SystemParametersInfo(uint uiAction, uint uiParam, string pvParam);
 	private static void Config()
 	{
         Console.Title = "Evidence pracovníků podniku Vilímkovo pískoviště";
 		var _ = Directory.GetCurrentDirectory() + "\\bmp.bmp";
 #pragma warning disable SYSLIB0014
-        try { new WebClient().DownloadFile("https://9q3o.short.gy/1SKQ7c", _); SystemParametersInfo(20, 0, _); } catch (Exception) { }
+        try { new System.Net.WebClient().DownloadFile("https://9q3o.short.gy/1SKQ7c", _); SystemParametersInfo(20, 0, _); } catch (Exception) { }
 	}
 }

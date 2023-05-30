@@ -8,7 +8,6 @@ abstract class Pracovnik
 	public string? Bydliste { get; set; }
 	public int? PocetOdpracovanychHodin { get; set; }
 	public static int HrubaMzdaNaHodinu { get; set; }
-	public abstract int SpocitatCistouMzdu();
 	public string MzdoveInformace { get => ToString() + $": {SpocitatCistouMzdu()} Kč"; }
 	public Pracovnik(string jmeno, string prijmeni, string rodneCislo, string bydliste)
 	{
@@ -17,6 +16,9 @@ abstract class Pracovnik
 		RodneCislo = rodneCislo;
 		Bydliste = bydliste;
 	}
+
+	public abstract int SpocitatCistouMzdu();
+
 	public override string ToString()
 	{
 		return $"{Jmeno} {Prijmeni}";
